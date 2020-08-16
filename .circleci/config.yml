@@ -12,10 +12,9 @@ jobs:
     docker:
         - image: alpine:3.12
     steps:
-        - run: pwd && ls
         - run: 
             name: Deploy Application to Fly
-            command: scipts/deploy.sh
+            command: scripts/deploy.sh
 
 
 workflows:
