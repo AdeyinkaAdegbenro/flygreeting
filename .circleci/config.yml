@@ -14,7 +14,7 @@ jobs:
     steps:
         - run: 
             name: Deploy Application to Fly
-            command: bash scipts/deploy.sh
+            command: scipts/deploy.sh
 
 
 workflows:
