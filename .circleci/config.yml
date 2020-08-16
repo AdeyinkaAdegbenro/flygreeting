@@ -12,10 +12,11 @@ jobs:
     docker:
         - image: alpine:3.12
     steps:
+        - run: ls
         - run: 
             name: Deploy Application to Fly
             shell: /bin/sh
-            command: scripts/deploy.sh
+            command: /bin/sh scripts/deploy.sh
 
 
 workflows:
