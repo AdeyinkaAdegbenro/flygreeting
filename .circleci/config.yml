@@ -5,12 +5,16 @@ jobs:
         # specify the version
         - image: circleci/golang:1.14
     steps:
+        - checkout
+        # Run tests
         - run: go test -v
   deploy:
+    docker:
+        - image: flyio/flyctl:v0.0.137
     steps:
         - run: 
-            name: Deploy Application
-            command: scipts/deploy.sh
+            name: Deploy Application to Fly
+            command: flyctl deploy
 
 
 
@@ -22,7 +26,6 @@ workflows:
             - deploy:
                 requires:
                     - test
-                context: flygreeting
                 filters:
                     branches:
-                        only: master
+                        only: main
