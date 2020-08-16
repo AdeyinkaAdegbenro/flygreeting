@@ -10,15 +10,15 @@ jobs:
         - run: go test -v
   deploy:
     docker:
-        - image: ubuntu
+        - image: alpine:3.12
     working_directory: ~/flygreeting
     steps:
         - checkout
         - run: 
             name: Deploy Application to Fly
             command: |
-                sudo chmod +x scripts/deploy.sh
-                ./scripts/deploy.sh
+            chmod +x scripts/deploy.sh
+            ./scripts/deploy.sh
 
 
 workflows:
