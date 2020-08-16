@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  test:
+    docker:
+        # specify the version
+        - image: circleci/golang:1.14
+    steps:
+        - run: go test -v
+  deploy:
+    steps:
+        - run: 
+            name: Deploy Application
+            command: scipts/deploy.sh
+
+
+
+workflows:
+    version: 2
+    test-and-deploy:
+        jobs:
+            - test
+            - deploy:
+                requires:
+                    - test
+                context: flygreeting
+                filters:
+                    branches:
+                        only: master

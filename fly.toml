@@ -1,6 +1,6 @@
-# fly.toml file generated for khaliats-flygreeting on 2020-08-05T00:47:39+01:00
+# fly.toml file generated for circleci-flygreeting on 2020-08-16T20:32:19+01:00
 
-app = "khaliats-flygreeting"
+app = "circleci-flygreeting"
 
 
 [[services]]
