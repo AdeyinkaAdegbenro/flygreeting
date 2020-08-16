@@ -1,5 +1,10 @@
 #!/bin/sh -l
 
+
+apt update
+# install curl
+apk add --no-cache curl
+
 # install flyctl
 curl -L https://fly.io/install.sh | sh
 
