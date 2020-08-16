@@ -17,8 +17,8 @@ jobs:
         - run: 
             name: Deploy Application to Fly
             command: |
-            chmod +x scripts/deploy.sh
-            ./scripts/deploy.sh
+                chmod +x scripts/deploy.sh
+                ./scripts/deploy.sh
 
 
 workflows:
