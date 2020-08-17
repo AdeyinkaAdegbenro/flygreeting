@@ -13,6 +13,7 @@ jobs:
         # specify os base to run the steps from
         - image: alpine:3.12
     steps:
+        - checkout
         - run: 
             name: Deploy Application to Fly
             command: |
