@@ -30,7 +30,6 @@ workflows:
                 requires:
                     # the test job must pass, before starting the deploy job 
                     - test
-                context: flygreeting
                 filters:
                     branches:
                         # deploy only on branch main
