@@ -10,8 +10,8 @@ jobs:
         - run: go test -v
   deploy:
     docker:
+        # specify os base to run the steps from
         - image: alpine:3.12
-    working_directory: ~/flygreeting
     steps:
         - checkout
         - run: 
@@ -28,8 +28,10 @@ workflows:
             - test
             - deploy:
                 requires:
+                    # the test job must pass, before starting the deploy job 
                     - test
                 context: flygreeting
                 filters:
                     branches:
+                        # deploy only on branch main
                         only: main
